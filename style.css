@@ -1,0 +1,233 @@
+:root {
+  --blue: #3bb9e3;
+  --light-grey: #e6ecf0;
+  --placeholder: #667581;
+  --text: #1f2226;
+  --white: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background: var(--light-grey);
+  font-family: Arial, sans-serif;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+input {
+  -moz-appearance: textfield;
+}
+
+input::-webkit-inner-spin-button {
+  display: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input,
+button {
+  outline: 0;
+}
+
+::-webkit-input-placeholder {
+  color: var(--placeholder);
+}
+
+:-moz-placeholder {
+  color: var(--placeholder);
+}
+
+::-moz-placeholder {
+  color: var(--placeholder);
+}
+
+:-ms-input-placeholder {  
+  color: var(--placeholder);
+}
+
+.content {
+  max-width: 1170px;
+  margin: 0 auto;
+  /* padding: 0 30px; */
+}
+
+header.main-header {
+  background: var(--white);
+  box-shadow: 0 1px 30px rgba(0, 0, 0, 0.25);
+  height: 48px;
+  position: relative;
+  z-index: 1;
+}
+
+section.calculator {
+  background: var(--blue);
+  height: 480px;
+}
+
+section.calculator .content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+section.calculator .content h1 {
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+  color: var(--white);
+  font-size: 48px;
+}
+
+section.calculator .content div.values {
+  display: flex;
+  margin-top: 96px;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+section.calculator .content div.values div.height,
+section.calculator .content div.values div.weight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section.calculator .content div.values strong {
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+  color: var(--white);
+  font-size: 24px;
+}
+
+section.calculator .content div.values input {
+  border: 0;
+  border-radius: 48px;
+  color: var(--text);
+  font-size: 24px;
+  margin-top: 12px;
+  width: 240px;
+  height: 48px;
+  padding: 0 12px;
+  text-align: center;
+  box-shadow: 0 1px 30px rgba(0, 0, 0, 0.25);
+}
+
+section.calculator .content div.actions {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+}
+
+section.calculator .content div.actions button {
+  border: 1px solid var(--white);
+  background: var(--white);
+  border-radius: 48px;
+  color: var(--blue);
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  height: 36px;
+  width: 192px;
+
+  transition: filter 0.2s;
+}
+
+section.calculator .content div.actions button:hover {
+  filter: brightness(0.9);
+}
+
+section.calculator .content div.actions button.clean {
+  margin-top: 24px;
+}
+
+section.result {
+  background-color: var(--white);
+  height: 96px;
+}
+
+section.result .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+section.result .content strong {
+  color: var(--text);
+  font-size: 36px;
+}
+
+section.table {
+  height: 240px;
+}
+
+section.table .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 360px;
+}
+
+section.table .content table {
+  background: var(--white);
+  border-collapse: collapse;
+  border-radius: 4px;
+  text-align: left;
+  width: 70%;
+}
+
+section.table .content table th:last-child,
+section.table .content table tr td:last-child {
+  text-align: center;
+}
+
+section.table .content table th {
+  color: var(--text);
+  font-size: 18px;
+}
+
+section.table .content table th span {
+  font-size: 14px;
+}
+
+section.table .content table tr td {
+  color: var(--text);
+  font-size: 14px;
+}
+
+section.table .content table tr td:first-child {
+  font-weight: bold;
+}
+
+section.table .content table tr {
+  border-bottom: 1px solid var(--light-grey);
+  
+  transition: background 0.1s;
+}
+
+section.table .content table tr.active {
+  background: var(--blue);
+  box-shadow: 0 1px px rgba(0, 0, 0, 0.25);
+}
+
+section.table .content table tr.active td {
+  color: var(--white);
+  font-weight: bold;
+}
+
+section.table .content table tr:hover:not(.table-headers, .active) {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+section.table .content table td,
+section.table .content table th {
+  padding: 12px 12px;
+}
