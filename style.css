@@ -179,7 +179,7 @@ section.table .content {
 section.table .content table {
   background: var(--white);
   border-collapse: collapse;
-  border-radius: 4px;
+  border-radius: 6px;
   text-align: left;
   width: 70%;
 }
