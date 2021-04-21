@@ -47,17 +47,22 @@ function handleActivateResultRow(result) {
   if (result < 18.5) {
     resultRows[0].className = 'active';
     jokeParagraph.textContent = phrases[0];
+    jokeVideoLink.className = 'hide';
   } else if (result >= 18.5 && result < 25) {
     resultRows[1].className = 'active';
     jokeParagraph.textContent = phrases[1];
+    jokeVideoLink.className = 'hide';
   } else if (result >= 25 && result < 30) {
     resultRows[2].className = 'active';
     jokeParagraph.textContent = phrases[2];
+    jokeVideoLink.className = 'hide';
   } else if (result >= 30 && result < 40) {
     resultRows[3].className = 'active';
     jokeParagraph.textContent = phrases[3];
+    jokeVideoLink.className = 'hide';
   } else {
     resultRows[4].className = 'active';
+    jokeParagraph.textContent = '';
     jokeVideoLink.className = '';
   }
 }
