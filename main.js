@@ -19,15 +19,17 @@ function handleCalculate() {
   const height = parseFloat(heightInput.value.replace(',', '.'));
   const weight = parseFloat(weightInput.value.replace(',', '.'));
 
+  let result;
+
   if (!height || !weight) {
     // TODO: Colocar aviso de que campos não podem estar vazios.
     return;
   }
 
-  imcResult.textContent = (weight / (height * height)).toFixed(2).replace('.', ',');
+  result = weight / (height * height);
+  imcResult.textContent = result.toFixed(2).replace('.', ',');
 
-
-  handleActivateResultRow(parseFloat(imcResult.textContent));
+  handleActivateResultRow(result);
 }
 
 function handleClean() {
@@ -42,6 +44,7 @@ function handleClean() {
 }
 
 function handleActivateResultRow(result) {
+  console.log(result)
   resetResultRows();
 
   if (result < 18.5) {
