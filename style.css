@@ -15,7 +15,7 @@
 html,
 body {
   background: var(--light-grey);
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased !important;
 }
@@ -155,6 +155,7 @@ section.result {
 
 section.result .content {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100%;
@@ -163,6 +164,16 @@ section.result .content {
 section.result .content strong {
   color: var(--text);
   font-size: 36px;
+}
+
+section.result .content p {
+  color: var(--text);
+  font-size: 24px;
+}
+
+section.result .content a#joke-video {
+  font-size: 24px;
+  text-decoration: none;
 }
 
 section.table {
