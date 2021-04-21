@@ -18,12 +18,6 @@
 </head>
 
 <body>
-  <!-- <header class="main-header">
-    <div class="content">
-  
-    </div>
-  </header> -->
-
   <section class="calculator">
     <div class="content">
       <h1>Calcule o seu IMC</h1>
@@ -31,12 +25,12 @@
         <div class="height">
           <strong>Altura (m):</strong>
           <!-- TODO: Validar, permitir apenas duas casas decimais -->
-          <input id="height-input" type="text" placeholder="1,70" onkeypress="validateNumericsAndComma(event)">
+          <input id="height-input" type="text" placeholder="1,70" onkeypress="validateNumericsAndOneCommaOnly(event, event.target.value)">
         </div>
         <div class="weight">
           <strong>Peso (kg):</strong>
           <!-- TODO: Validar, permitir apenas duas casas decimais -->
-          <input id="weight-input" type="text" placeholder="75,8">
+          <input id="weight-input" type="text" placeholder="75,8" onkeypress="validateNumericsAndOneCommaOnly(event, event.target.value)">
         </div>
       </div>
       <div class="actions">
@@ -46,7 +40,6 @@
     </div>
   </section>
 
-  <!-- TODO: Colocar box-shadow -->
   <section class="result">
     <div class="content">
       <strong>Seu IMC: <span id="imc-result">0,00</span></strong>
@@ -57,7 +50,6 @@
 
   <section class="table">
     <div class="content">
-      <!-- TODO: Conferir classificações e valores -->
       <table>
         <thead>
           <tr class="table-headers">
@@ -97,11 +89,60 @@
     </div>
   </section>
 
-  <section class="main-content">
+  <main class="main-content">
     <div class="content">
+      <h1>Mas, afinal, o que é IMC?</h1>
+
+      <p>
+        O IMC - <strong>Índice de Massa Corporal</strong> - é a medida utilizada para identificar se uma pessoa está ou não com o peso ideal. 
+        Pessoas que querem iniciar uma dieta, se empenharem em atividades físicas, ou estão apenas preocupadas com seu corpo podem utilizar 
+        uma conta muito simples, criada no século XIX pelo matemático Adolphe Quételet, para descobrir o seu valor.
+        Calcular o seu IMC pode ser o primeiro passo para iniciar um processo de transformação do seu corpo, seja aumentando ou diminuindo a 
+        sua alimentação, ou adaptando os seus exercícios às suas necessidades.
+      </p>
+
+      <p>
+        O IMC é calculado dividindo-se o peso <b>(em kg)</b> pela altura ao quadrado <b>(em metros)</b>. O resultado final representa o quanto a pessoa 
+        tem de massa muscular + massa de gordura + massa óssea, e saber disso é importante, pois o IMC também apresenta uma série de 
+        limitações.
+      </p>
+
+      <h2>As limitações do IMC</h2>
+
+      <p>
+        Por ser um índice que diz respeito ao total da massa do corpo, sem considerar as proporções de cada "elemento" 
+        (gordura, massa óssea, músculos, etc), é importante saber que existem outros fatores que podem influenciar no resultado final:
+      </p>
+
+      <ul>
+        <li>
+          <strong>Proporção do corpo:</strong> pessoas com pernas curtas, por exemplo, podem ter o valor do IMC acima do esperado.
+        </li>
+        <li>
+          <strong>Idade:</strong> o cálculo do IMC para crianças é ligeiramente diferente, devendo-se considerar a idade no cálculo. 
+          Para idosos, a fórmula padrão é usada, porém a interpretação dos resultados é ligeiramente diferente.
+        </li>
+        <li>
+          <strong>Sexo:</strong> homens e mulheres possuem percentuais diferentes de gordura no corpo, o que pode gerar uma diferença no 
+          resultado final.
+        </li>
+        <li>
+          <strong>Gravidez:</strong> se considerado o peso proveniente da gestação, o resultado pode ser confundido com obesidade.
+        </li>
+        <li>
+          <strong>Musculação:</strong> embora já citado anteriormente que a proporção de massa muscular pode fazer diferença, 
+          praticantes da modalidade podem ter resultados diferentes do esperado por conta da alimentação diferenciada, suplementação, 
+          tamanho dos músculos, entre outros.
+        </li>
+      </ul>
+
+      <p>
+        Saber desssas limitaçações mostra que o IMC jamais deve ser considerado como a única forma de avaliação, pois pode levar a um 
+        diagnóstico impreciso e, consequentemente, a um tratamente ineficiente.
+      </p>
       
     </div>
-  </section>
+  </main>
 
   <script src="main.js"></script>
 </body>

@@ -10,7 +10,7 @@ const resultRows = document.querySelectorAll('section.table tr:not(.table-header
 const phrases = {
   0: 'Tá deitando na agulha e se cobrindo com a linha?',
   1: 'Boa, campeão!',
-  2: '"Faz academia, mas não adianta nada. Eu que sou gordinho, domino a mulherada..."', 
+  2: '"Faz academia, mas não adianta nada. Eu que sou gordinho, domino a mulherada..."',
   3: 'E aí, fofura, bora tomar jeito?'
 }
 
@@ -44,7 +44,6 @@ function handleClean() {
 }
 
 function handleActivateResultRow(result) {
-  console.log(result)
   resetResultRows();
 
   if (result < 18.5) {
@@ -76,11 +75,12 @@ function resetResultRows() {
   }
 }
 
-function validateNumericsAndComma(event) {
+function validateNumericsAndOneCommaOnly(event, inputValue) {
   if (!event.key.match(/[0-9\,]+/g)) {
     event.preventDefault();
   }
 
-
-  // 
+  if (inputValue.includes(',') && event.key === ',') {
+    event.preventDefault();
+  }
 }
