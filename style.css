@@ -57,7 +57,10 @@ button {
 .content {
   max-width: 1170px;
   margin: 0 auto;
-  /* padding: 0 30px; */
+}
+
+.hide {
+  display: none;
 }
 
 header.main-header {
@@ -172,8 +175,19 @@ section.result .content p {
 }
 
 section.result .content a#joke-video {
+  color: var(--blue);
   font-size: 24px;
   text-decoration: none;
+}
+
+section.result .content a#joke-video:visited {
+  color: var(--blue);
+
+  transition: filter 0.1s;
+}
+
+section.result .content a#joke-video:hover {
+  filter: brightness(0.9);
 }
 
 section.table {

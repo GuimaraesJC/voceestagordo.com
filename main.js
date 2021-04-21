@@ -3,6 +3,7 @@ const weightInput = document.getElementById('weight-input');
 
 const imcResult = document.getElementById('imc-result');
 const jokeParagraph = document.getElementById('joke');
+const jokeVideoLink = document.getElementById('joke-video');
 
 const resultRows = document.querySelectorAll('section.table tr:not(.table-headers)');
 
@@ -10,8 +11,7 @@ const phrases = {
   0: 'Tá deitando na agulha e se cobrindo com a linha?',
   1: 'Boa, campeão!',
   2: '"Faz academia, mas não adianta nada. Eu que sou gordinho, domino a mulherada..."', 
-  3: 'E aí, fofura, bora tomar jeito?',
-  4: 'https://www.youtube.com/watch?v=XG4GxnWWjzo'
+  3: 'E aí, fofura, bora tomar jeito?'
 }
 
 
@@ -36,6 +36,7 @@ function handleClean() {
 
   imcResult.textContent = '0,00';
   jokeParagraph.textContent = '';
+  jokeVideoLink.className = 'hide';
 
   resetResultRows();
 }
@@ -57,7 +58,7 @@ function handleActivateResultRow(result) {
     jokeParagraph.textContent = phrases[3];
   } else {
     resultRows[4].className = 'active';
-    jokeParagraph.textContent = phrases[4];
+    jokeVideoLink.className = '';
   }
 }
 
